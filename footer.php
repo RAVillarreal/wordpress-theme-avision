@@ -43,7 +43,7 @@
     </div>
 </footer>
 </div>
-
+<?php wp_footer(); ?>
 <script src="<?php echo $template_path; ?>/js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo $template_path; ?>/styles/bootstrap4/popper.js"></script>
 <script src="<?php echo $template_path; ?>/styles/bootstrap4/bootstrap.min.js"></script>

@@ -5,7 +5,17 @@
 <div class="home_slider_container">
     <div class="owl-carousel owl-theme home_slider">
 
-        <?php ?>
+        <?php
+        $query = new WP_Query( array(
+            'orderby' => 'comments',
+        ));
+        ?>
+
+        <?php if ($query->have_posts()): ?>
+            <?php while ($query->have_posts()): $query->the_post();?>
+            
+            <?php endwhile; ?>
+        <?php endif;?>
 
         <!-- Slider Item -->
         <div class="owl-item">

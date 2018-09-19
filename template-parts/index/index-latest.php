@@ -17,18 +17,22 @@
 
             <?php if ( $query->have_posts() ) :?>
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                    <?php if($query->current_post == 0) :?>
+
+                    <?php $current_post = strval($query->current_post)?>
+                    <?php if ($current_post == 0 or $current_post == 2 or $current_post == 3 or $current_post == 6): ?>
 
                         <!-- Small Card With Image -->
                         <div class="card card_small_with_image grid-item">
-                            <img class="card-img-top" src="<?php echo $template_path; ?>/images/post_10.jpg" alt="">
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <img class="card-img-top" src="<?php echo the_post_thumbnail_url(); ?>" alt="https://unsplash.com/@cjtagupa">
+                            <?php endif; ?>
                             <div class="card-body">
                                 <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
                                 <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
                             </div>
                         </div>
 
-                    <?php elseif ($query->current_post == 1): ?>
+                    <?php elseif ($current_post == 1): ?>
 
                         <!-- Small Card Without Image -->
                         <div class="card card_default card_small_no_image grid-item">
@@ -38,63 +42,26 @@
                             </div>
                         </div>
 
-                    <?php elseif ($query->current_post == 2 or $query->current_post == 3): ?>
-
-                        <!-- Small Card With Image -->
-                        <div class="card card_small_with_image grid-item">
-                            <img class="card-img-top" src="<?php echo $template_path; ?>/images/post_15.jpg" alt="">
-                            <div class="card-body">
-                                <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
-                                <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
-                            </div>
-                        </div>
-
-                    <?php elseif ($query->current_post == 4 or $query->current_post == 5): ?>
+                    <?php elseif ($current_post == 4 or $current_post == 5): ?>
 
                         <!-- Small Card With Background -->
                         <div class="card card_default card_small_with_background grid-item">
-                            <div class="card_background" style="background-image:url(<?php echo $template_path; ?>/images/post_11.jpg)"></div>
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <div class="card_background" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>"></div>
+                            <?php endif; ?>
                             <div class="card-body">
                                 <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
                                 <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
                             </div>
                         </div>
 
-                    <?php elseif ($query->current_post == 4 or $query->current_post == 5): ?>
-
-                        <!-- Default Card No Image -->
-                        <div class="card card_default card_default_no_image grid-item">
-                            <div class="card-body">
-                                <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
-                            </div>
-                        </div>
-
-                    <?php elseif ($query->current_post == 6): ?>
-
-                        <!-- Small Card With Image -->
-                        <div class="card card_small_with_image grid-item">
-                            <img class="card-img-top" src="<?php echo $template_path; ?>/images/post_14.jpg" alt="">
-                            <div class="card-body">
-                                <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
-                                <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
-                            </div>
-                        </div>
-
-                    <?php elseif ($query->current_post == 7 or $query->current_post == 8): ?>
-
-                        <!-- Small Card Without Image -->
-                        <div class="card card_default card_small_no_image grid-item">
-                            <div class="card-body">
-                                <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
-                                <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
-                            </div>
-                        </div>
-
-                    <?php elseif ($query->current_post == 9 or 10): ?>
+                    <?php elseif ($current_post == 7 or $current_post == 8): ?>
 
                         <!-- Default Card With Background -->
                         <div class="card card_default card_default_with_background grid-item">
-                            <div class="card_background" style="background-image:url(<?php echo $template_path; ?>/images/post_12.jpg)"></div>
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <div class="card_background" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>"></div>
+                            <?php endif; ?>
                             <div class="card-body">
                                 <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
                             </div>

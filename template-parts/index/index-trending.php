@@ -45,7 +45,9 @@
 
                         <!-- Large Card With Background -->
                         <div class="card card_large_with_background grid-item">
-                            <div class="card_background" style="background-image:url(<?php echo $template_path; ?>/images/post_8.jpg)"></div>
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <div class="card_background" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>"></div>
+                            <?php endif; ?>
                             <div class="card-body">
                                 <div class="card-title"><a href="post.html"><?php the_title(); ?></a></div>
                                 <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
@@ -56,6 +58,9 @@
 
                         <!-- Large Card With Image -->
                         <div class="card grid-item card_large_with_image">
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <img class="card-img-top" src="<?php echo the_post_thumbnail_url(); ?>" alt="https://unsplash.com/@cjtagupa">
+                            <?php endif; ?>
                             <img class="card-img-top" src="<?php echo $template_path; ?>/images/post_9.jpg" alt="">
                             <div class="card-body">
                                 <div class="card-title"><a href="post.html"><?php the_title(); ?></a></div>
@@ -68,7 +73,9 @@
 
                         <!-- Default Card With Image -->
                         <div class="card card_small_with_image grid-item">
-                            <img class="card-img-top" src="<?php echo $template_path; ?>/images/post_5.jpg" alt="">
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <img class="card-img-top" src="<?php echo the_post_thumbnail_url(); ?>" alt="https://unsplash.com/@cjtagupa">
+                            <?php endif; ?>
                             <div class="card-body">
                                 <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
                                 <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
@@ -80,7 +87,9 @@
                         <!-- Default Card With Background -->
 
                         <div class="card card_default card_default_with_background grid-item">
-                            <div class="card_background" style="background-image:url(<?php echo $template_path; ?>/images/post_6.jpg)"></div>
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <div class="card_background" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>"></div>
+                            <?php endif; ?>
                             <div class="card-body">
                                 <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
                             </div>
@@ -100,7 +109,9 @@
                         <!-- Default Card With Background -->
 
                         <div class="card card_default card_default_with_background grid-item">
-                            <div class="card_background" style="background-image:url(<?php echo $template_path; ?>/images/post_7.jpg)"></div>
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <div class="card_background" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>"></div>
+                            <?php endif; ?>
                             <div class="card-body">
                                 <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
                             </div>

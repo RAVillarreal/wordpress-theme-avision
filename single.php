@@ -12,7 +12,7 @@
         <?php endif; ?>
         <div class="home_content">
             <?php foreach((get_the_category()) as $category):?>
-                <div class="post_category trans_200"><a href="category.html" class="trans_200"><?php echo $category->cat_name; ?></a></div>
+                <div class="post_category trans_200"><a href="<?php echo get_category_link($category)?>" class="trans_200"><?php echo $category->cat_name; ?></a></div>
             <?php endforeach; ?>
             <div class="post_title"><?php the_title(); ?></div>
         </div>

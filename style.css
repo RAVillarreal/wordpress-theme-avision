@@ -28,7 +28,10 @@ Author URL: https://github.com/ravillarreal
 .post_category {
     display: inline-block;
     padding: 0px 10px;
+    margin-top: 5px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 14px;
     text-align: center;
+    width: auto;
+    height: auto;
 }

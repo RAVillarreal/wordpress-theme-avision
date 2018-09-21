@@ -14,8 +14,15 @@
 <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
-<link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/styles/responsive.css">
+<?php if (is_single()): ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/styles/post.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/styles/post_responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/style.css">
+<?php else: ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $template_path; ?>/styles/main_styles.css">
+<?php endif; ?>
+
 </head>
 <body>
 

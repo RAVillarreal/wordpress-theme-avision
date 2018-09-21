@@ -4,7 +4,30 @@
 
 <div class="blog_section">
     <div class="section_panel d-flex flex-row align-items-center justify-content-start">
-        <div class="section_title">Latest Articles</div>
+        <div class="section_title">Latest</div>
+        <?php $categories = get_categories(array(
+            'orderby'=> 'ID',
+        ));?>
+        <?php $first_categories = array_slice($categories, 0,5);?>
+        <?php $last_categories = array_slice($categories, 5);?>
+        <div class="section_tags ml-auto">
+            <ul>
+                <?php foreach($first_categories as $category) {
+                    echo '<li><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>';
+                }?>
+            </ul>
+        </div>
+        <div class="section_panel_more">
+            <ul>
+                <li>more
+                    <ul>
+                        <?php foreach($last_categories as $category) {
+                            echo '<li><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>';
+                        }?>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="section_content">
         <div class="grid clearfix">
@@ -27,7 +50,7 @@
                                 <img class="card-img-top" src="<?php echo the_post_thumbnail_url(); ?>" alt="https://unsplash.com/@cjtagupa">
                             <?php endif; ?>
                             <div class="card-body">
-                                <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
+                                <div class="card-title card-title-small"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                                 <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
                             </div>
                         </div>
@@ -37,7 +60,7 @@
                         <!-- Small Card Without Image -->
                         <div class="card card_default card_small_no_image grid-item">
                             <div class="card-body">
-                                <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
+                                <div class="card-title card-title-small"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                                 <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
                             </div>
                         </div>
@@ -50,7 +73,7 @@
                                 <div class="card_background" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>"></div>
                             <?php endif; ?>
                             <div class="card-body">
-                                <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
+                                <div class="card-title card-title-small"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                                 <small class="post_meta"><a href="#"><?php the_author(); ?></a><span><?php echo get_the_date('M j, Y \a\t g:i a', $post->ID); ?></span></small>
                             </div>
                         </div>
@@ -63,7 +86,7 @@
                                 <div class="card_background" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>"></div>
                             <?php endif; ?>
                             <div class="card-body">
-                                <div class="card-title card-title-small"><a href="post.html"><?php the_title(); ?></a></div>
+                                <div class="card-title card-title-small"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                             </div>
                         </div>
 

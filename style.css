@@ -6,3 +6,29 @@ Version: 0.0.1
 Author: Rafael Villarreal
 Author URL: https://github.com/ravillarreal
 */
+
+.post_body p {
+    font-size: 16px;
+    line-height: 1.875;
+    color: rgba(0,0,0,0.8);
+}
+
+.post_body blockquote {
+    padding-top: 58px;
+    padding-bottom: 58px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.post_body p blockquote {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.post_category {
+    display: inline-block;
+    padding: 0px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    text-align: center;
+}

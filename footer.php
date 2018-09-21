@@ -48,10 +48,15 @@
 <script src="<?php echo $template_path; ?>/styles/bootstrap4/popper.js"></script>
 <script src="<?php echo $template_path; ?>/styles/bootstrap4/bootstrap.min.js"></script>
 <script src="<?php echo $template_path; ?>/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="<?php echo $template_path; ?>/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.js"></script>
 <script src="<?php echo $template_path; ?>/plugins/easing/easing.js"></script>
 <script src="<?php echo $template_path; ?>/plugins/masonry/masonry.js"></script>
-<script src="<?php echo $template_path; ?>/plugins/masonry/images_loaded.js"></script>
-<script src="<?php echo $template_path; ?>/js/custom.js"></script>
+<?php if (is_single()): ?>
+    <script src="<?php echo $template_path; ?>/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="<?php echo $template_path; ?>/js/post.js"></script>
+<?php else: ?>
+    <script src="<?php echo $template_path; ?>/js/custom.js"></script>
+    <script src="<?php echo $template_path; ?>/plugins/masonry/images_loaded.js"></script>
+    <script src="<?php echo $template_path; ?>/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.js"></script>
+<?php endif; ?>
 </body>
 </html>

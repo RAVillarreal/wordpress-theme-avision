@@ -8,6 +8,7 @@
         <?php
         $query = new WP_Query( array(
             'orderby' => 'comments',
+            'post-by-page' => 3,
         ));
         ?>
 
